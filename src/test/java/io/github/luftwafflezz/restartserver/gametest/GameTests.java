@@ -1,8 +1,8 @@
-package io.github.steveplays28.restartserver.gametest;
+package io.github.luftwafflezz.restartserver.gametest;
 
-import io.github.steveplays28.restartserver.RestartScheduler;
-import io.github.steveplays28.restartserver.RestartServer;
-import io.github.steveplays28.restartserver.commands.RestartCommand;
+import io.github.luftwafflezz.restartserver.RestartScheduler;
+import io.github.luftwafflezz.restartserver.RestartServer;
+import io.github.luftwafflezz.restartserver.commands.RestartCommand;
 import net.fabricmc.fabric.api.gametest.v1.GameTest;
 import net.minecraft.commands.CommandSource;
 import net.minecraft.commands.CommandSourceStack;

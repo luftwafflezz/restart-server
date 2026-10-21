@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "io.github.steveplays28.restartserver.mixin",
+  "package": "io.github.luftwafflezz.restartserver.mixin",
   "compatibilityLevel": "JAVA_25",
   "mixins": [
     "MinecraftServerMixin"

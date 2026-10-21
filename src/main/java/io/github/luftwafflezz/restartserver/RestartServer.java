@@ -1,8 +1,8 @@
-package io.github.steveplays28.restartserver;
+package io.github.luftwafflezz.restartserver;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import io.github.steveplays28.restartserver.commands.RestartCommand;
-import io.github.steveplays28.restartserver.config.RestartServerConfig;
+import io.github.luftwafflezz.restartserver.commands.RestartCommand;
+import io.github.luftwafflezz.restartserver.config.RestartServerConfig;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.DedicatedServerModInitializer;

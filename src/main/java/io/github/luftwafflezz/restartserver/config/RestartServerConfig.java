@@ -1,6 +1,6 @@
-package io.github.steveplays28.restartserver.config;
+package io.github.luftwafflezz.restartserver.config;
 
-import io.github.steveplays28.restartserver.RestartServer;
+import io.github.luftwafflezz.restartserver.RestartServer;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;

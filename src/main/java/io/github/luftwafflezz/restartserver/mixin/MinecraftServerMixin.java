@@ -1,6 +1,6 @@
-package io.github.steveplays28.restartserver.mixin;
+package io.github.luftwafflezz.restartserver.mixin;
 
-import io.github.steveplays28.restartserver.RestartServer;
+import io.github.luftwafflezz.restartserver.RestartServer;
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

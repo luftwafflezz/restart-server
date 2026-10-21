@@ -1,7 +1,7 @@
-package io.github.steveplays28.restartserver.commands;
+package io.github.luftwafflezz.restartserver.commands;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import io.github.steveplays28.restartserver.RestartServer;
+import io.github.luftwafflezz.restartserver.RestartServer;
 import me.lucko.fabric.api.permissions.v0.Permissions;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;

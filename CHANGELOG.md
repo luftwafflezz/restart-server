@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated to Java 25
 - Updated to Gradle 9.8.2 and Fabric Loom 1.19.2
 - Migrated to Mojang mappings (unobfuscated Minecraft)
+- The Java package and Maven group are now `io.github.luftwafflezz` (the mod id, config file and permission node are unchanged)
 - Scheduled restarts and the restart when no players have been online now also run while Minecraft pauses an empty server (`pause-when-empty-seconds` in `server.properties`, 60 seconds by default)
 - Restart messages in the server console are now prefixed with `System chat:` by Minecraft
 - The default config values are now meant for Linux: `restartScriptPath` is `./start.sh`, `openInTerminal` is `false` and `terminalStartCommand` is `x-terminal-emulator -e` (existing config files keep their values)

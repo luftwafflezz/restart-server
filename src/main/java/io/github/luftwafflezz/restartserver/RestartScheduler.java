@@ -1,6 +1,6 @@
-package io.github.steveplays28.restartserver;
+package io.github.luftwafflezz.restartserver;
 
-import io.github.steveplays28.restartserver.commands.RestartCommand;
+import io.github.luftwafflezz.restartserver.commands.RestartCommand;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
