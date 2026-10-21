@@ -4,29 +4,35 @@
 
 Adds a restart command to dedicated servers.
 
+> **Fork notice:** this is an unofficial port of [Steveplays28's restart-server](https://github.com/steves-underwater-paradise/restart-server) to Minecraft 26.3, maintained at [luftwafflezz/restart-server](https://github.com/luftwafflezz/restart-server).
+
 ![Restart command screenshot](docs/media/command_preview.png)
 
 I made this so you don't have to run `/stop` and then run the start script again.  
 Supports scheduling restarts at intervals, or when no players have been online for some time.
 
-Everything is fully configurable in the `restart-server.json` config file. You can reload the mod's config using `/reload`.
+Everything is fully configurable in the `restart-server.json5` config file (in the `config` folder). You can reload the mod's config using `/reload`.
 
 ## Dependencies
 
-- [Fabric API](https://modrinth.com/mod/fabric-api) or [Quilt Standard Libraries](https://modrinth.com/mod/qsl)
+- Minecraft 26.3, running on Java 25
+- [Fabric Loader](https://fabricmc.net/use/server/) 0.19.3 or newer
+- [Fabric API](https://modrinth.com/mod/fabric-api)
 - [Cloth Config API](https://modrinth.com/mod/cloth-config)
 
 ## Download
 
-[![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/github_vector.svg)](https://github.com/Steveplays28/restart-server)
+[![github](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/github_vector.svg)](https://github.com/luftwafflezz/restart-server/releases)
 [![modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/mod/restart-server)
 [![curseforge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/cozy/available/curseforge_vector.svg)](https://www.curseforge.com/minecraft/mc-mods/restart-server)
 
 ![fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/compact/supported/fabric_vector.svg)
-![quilt](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@2/assets/compact/supported/quilt_vector.svg)
+
+The Modrinth and CurseForge pages above only carry the original author's builds for older Minecraft versions; Minecraft 26.3 builds of this fork are published on its GitHub releases page once released, or can be built from source with `./gradlew build` (JDK 25).
 
 See the version info in the filename for the supported Minecraft versions.  
-Made for the Fabric and Quilt modloaders.  
+Made for the Fabric modloader.  
+Quilt is not supported: Quilt Standard Libraries (Quilted Fabric API) has no release for Minecraft 26.x as of October 2026, so this fork has not been tested with Quilt.  
 Server side only.
 
 ## FAQ

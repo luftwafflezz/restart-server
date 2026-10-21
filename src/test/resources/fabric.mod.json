@@ -19,7 +19,6 @@
       }
     },
     "mc-publish": {
-      "quilt": true,
       "curseforge": 677580,
       "modrinth": "zG0Bb7gw"
     }
@@ -33,9 +32,10 @@
     ]
   },
   "depends": {
-    "fabricloader": ">=0.14.9",
-    "minecraft": ">=1.19 <1.21",
-    "fabric": ">=0.48.0",
-    "cloth-config": ">=7.0.69"
+    "fabricloader": ">=0.19.3",
+    "minecraft": "~26.3",
+    "java": ">=25",
+    "fabric-api": "*",
+    "cloth-config": ">=26.3"
   }
 }

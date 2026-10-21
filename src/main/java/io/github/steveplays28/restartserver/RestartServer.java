@@ -8,8 +8,7 @@ import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import net.fabricmc.api.DedicatedServerModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
-import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.commands.CommandSourceStack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,7 +18,8 @@ public class RestartServer implements DedicatedServerModInitializer {
 	public static final String MOD_ID = "restart-server";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static RestartServerConfig config;
-	public static final List<LiteralArgumentBuilder<ServerCommandSource>> COMMANDS = List.of(RestartCommand.register());
+	public static final RestartScheduler SCHEDULER = new RestartScheduler();
+	public static final List<LiteralArgumentBuilder<CommandSourceStack>> COMMANDS = List.of(RestartCommand.register());
 
 	@Override
 	public void onInitializeServer() {
@@ -37,8 +37,7 @@ public class RestartServer implements DedicatedServerModInitializer {
 			LOGGER.info("[Restart Server] Reloaded config!");
 		});
 
-		// Register events
-		ServerTickEvents.END_SERVER_TICK.register(new RestartScheduler()::onTick);
+		// The scheduler is ticked by MinecraftServerMixin, so it keeps running while Minecraft pauses an empty server
 
 		// Register commands
 		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
