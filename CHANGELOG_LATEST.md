@@ -8,8 +8,9 @@
 - Migrated to Mojang mappings (unobfuscated Minecraft)
 - Scheduled restarts and the restart when no players have been online now also run while Minecraft pauses an empty server (`pause-when-empty-seconds` in `server.properties`, 60 seconds by default)
 - Restart messages in the server console are now prefixed with `System chat:` by Minecraft
+- The default config values are now meant for Linux: `restartScriptPath` is `./start.sh`, `openInTerminal` is `false` and `terminalStartCommand` is `x-terminal-emulator -e` (existing config files keep their values)
 
 ### Removed
 
 - Support for Minecraft 1.19.x-1.20.x, use older releases for these versions
-- Quilt is no longer listed as a supported modloader, it has not been tested with Minecraft 26.x
+- Support for the Quilt modloader

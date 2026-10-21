@@ -8,14 +8,14 @@ import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 @Config(name = RestartServer.MOD_ID)
 public class RestartServerConfig implements ConfigData {
 	// Restart script
-	@Comment("Set to true to run an executable restart script (such as .bat files).\nDEFAULT: true")
+	@Comment("Set to true to run an executable restart script (such as .sh files).\nDEFAULT: true")
 	public boolean runRestartScript = true;
-	@Comment("The executable restart script that should run.\nDIRECTORY: if using relative paths, starts at the server root directory (/)\nDEFAULT: start.bat")
-	public String restartScriptPath = "start.bat";
-	@Comment("Set to true to run the executable restart script in a new terminal window.\nDEFAULT: true")
-	public boolean openInTerminal = true;
-	@Comment("The command that is used to open the new terminal window.\nFORMAT: terminalStartCommand %command%\nDEFAULT: cmd /c start")
-	public String terminalStartCommand = "cmd /c start";
+	@Comment("The executable restart script that should run.\nThe script has to be executable (chmod +x) and start with a shebang, for example #!/bin/sh\nDIRECTORY: if using relative paths, starts at the server root directory (/)\nDEFAULT: ./start.sh")
+	public String restartScriptPath = "./start.sh";
+	@Comment("Set to true to run the executable restart script in a new terminal window.\nDEFAULT: false")
+	public boolean openInTerminal = false;
+	@Comment("The command that is used to open the new terminal window.\nFORMAT: terminalStartCommand %command%\nDEFAULT: x-terminal-emulator -e")
+	public String terminalStartCommand = "x-terminal-emulator -e";
 	@Comment("Set to true to stop the server when running the executable restart script.\nDEFAULT: true")
 	public boolean stopServer = true;
 

@@ -13,6 +13,13 @@ Supports scheduling restarts at intervals, or when no players have been online f
 
 Everything is fully configurable in the `restart-server.json5` config file (in the `config` folder). You can reload the mod's config using `/reload`.
 
+By default `/restart` runs `./start.sh` in the server's root directory and then stops the server. The script has to be executable (`chmod +x start.sh`) and start with a shebang, for example:
+
+```sh
+#!/bin/sh
+java -Xmx4G -jar fabric-server-launch.jar nogui
+```
+
 ## Dependencies
 
 - Minecraft 26.3, running on Java 25
@@ -32,7 +39,6 @@ The Modrinth and CurseForge pages above only carry the original author's builds 
 
 See the version info in the filename for the supported Minecraft versions.  
 Made for the Fabric modloader.  
-Quilt is not supported: Quilt Standard Libraries (Quilted Fabric API) has no release for Minecraft 26.x as of October 2026, so this fork has not been tested with Quilt.  
 Server side only.
 
 ## FAQ
