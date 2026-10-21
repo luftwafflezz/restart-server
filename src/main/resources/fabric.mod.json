@@ -5,23 +5,13 @@
   "name": "Restart Server",
   "description": "Adds a restart command to dedicated servers.",
   "authors": [
-    "Steveplays28"
+    "Steveplays28",
+    "luftwafflezz"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/restart-server",
+    "homepage": "https://github.com/luftwafflezz/restart-server",
     "sources": "https://github.com/luftwafflezz/restart-server",
     "issues": "https://github.com/luftwafflezz/restart-server/issues"
-  },
-  "custom": {
-    "modmenu": {
-      "links": {
-        "modmenu.discord": "https://discord.gg/KbWxgGg"
-      }
-    },
-    "mc-publish": {
-      "curseforge": 677580,
-      "modrinth": "zG0Bb7gw"
-    }
   },
   "license": "LGPLv2.1",
   "icon": "assets/restart-server/icon.png",
