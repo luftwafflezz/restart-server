@@ -17,8 +17,11 @@ By default `/restart` runs `./start.sh` in the server's root directory and then 
 
 ```sh
 #!/bin/sh
-java -Xmx4G -jar fabric-server-launch.jar nogui
+# Wait for the old server to release its port, then start the new one detached from the old server's process
+( sleep 10; exec setsid java -Xmx4G -jar fabric-server-launch.jar nogui > server.log 2>&1 < /dev/null ) &
 ```
+
+The script is started by the server and doesn't have a terminal (unless `openInTerminal` is enabled), so it has to start the server detached with its output redirected, as in the example. The old server keeps running for a moment after the script has started, so wait for it to stop before binding the port again.
 
 ## Dependencies
 

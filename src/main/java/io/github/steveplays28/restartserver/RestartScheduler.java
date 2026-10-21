@@ -17,7 +17,18 @@ public class RestartScheduler {
 	public long nextRestartIfNoPlayersHaveBeenOnline = -1;
 
 	public void onTick(MinecraftServer server) {
+		// Nothing is left to schedule once the server is stopping
+		if (!server.isRunning()) {
+			return;
+		}
+
 		restartIntervalCounter(server);
+
+		// Don't restart a second time in the same tick if the restart above already stopped the server
+		if (!server.isRunning()) {
+			return;
+		}
+
 		RestartIfNoPlayersHaveBeenOnlineCounter(server);
 	}
 
@@ -33,6 +44,8 @@ public class RestartScheduler {
 			if (nextRestart <= now) {
 				// Restart server
 				RestartCommand.execute(server.createCommandSourceStack());
+				// Schedule the next restart, for when the restart doesn't stop the server (stopServer is disabled, or the restart script failed)
+				isRestartScheduled = false;
 			} else {
 				long difference = nextRestart - now;
 				if (difference % 60 != 0) return;
@@ -68,6 +81,9 @@ public class RestartScheduler {
 			if (nextRestartIfNoPlayersHaveBeenOnline <= now && isRestartIfNoPlayersHaveBeenOnlineScheduled) {
 				// Restart server
 				RestartCommand.execute(server.createCommandSourceStack());
+				// Schedule the next restart, for when the restart doesn't stop the server (stopServer is disabled, or the restart script failed)
+				nextRestartIfNoPlayersHaveBeenOnline = -1;
+				isRestartIfNoPlayersHaveBeenOnlineScheduled = false;
 			}
 		} else {
 			if (server.getPlayerCount() <= 0) {

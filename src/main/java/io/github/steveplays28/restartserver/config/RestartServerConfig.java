@@ -14,7 +14,7 @@ public class RestartServerConfig implements ConfigData {
 	public String restartScriptPath = "./start.sh";
 	@Comment("Set to true to run the executable restart script in a new terminal window.\nDEFAULT: false")
 	public boolean openInTerminal = false;
-	@Comment("The command that is used to open the new terminal window.\nFORMAT: terminalStartCommand %command%\nDEFAULT: x-terminal-emulator -e")
+	@Comment("The command that is used to open the new terminal window.\nFORMAT: terminalStartCommand %command%\nEXAMPLES: konsole -e, gnome-terminal --, xterm -e\nDEFAULT: x-terminal-emulator -e")
 	public String terminalStartCommand = "x-terminal-emulator -e";
 	@Comment("Set to true to stop the server when running the executable restart script.\nDEFAULT: true")
 	public boolean stopServer = true;

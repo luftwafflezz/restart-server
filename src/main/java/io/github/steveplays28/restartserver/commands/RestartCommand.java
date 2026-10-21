@@ -10,6 +10,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.permissions.PermissionLevel;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static org.apache.commons.lang3.exception.ExceptionUtils.getStackTrace;
 
@@ -26,7 +27,7 @@ public class RestartCommand {
 			// Send restart message to console
 			source.getServer().sendSystemMessage(Component.literal("[Restart Server] " + RestartServer.config.restartMessage).withStyle(ChatFormatting.YELLOW));
 			// Disconnect all players with the restart message
-			source.getServer().getPlayerList().getPlayers().forEach(player -> player.connection.disconnect(Component.literal(RestartServer.config.restartMessage)));
+			new ArrayList<>(source.getServer().getPlayerList().getPlayers()).forEach(player -> player.connection.disconnect(Component.literal(RestartServer.config.restartMessage)));
 		}
 
 		if (RestartServer.config.runRestartScript) {
@@ -47,7 +48,7 @@ public class RestartCommand {
 				}
 
 				return 0;
-			} catch (IOException e) {
+			} catch (IOException | RuntimeException e) {
 				RestartServer.LOGGER.info("[Restart Server] " + getStackTrace(e));
 
 				// Send restart failed message to console and all players
